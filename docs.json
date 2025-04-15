@@ -3,8 +3,8 @@
   "theme": "mint",
   "name": "Server Rasputin",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
+    "primary": "#95BF74",
+    "light": "#008080",
     "dark": "#15803D"
   },
   "favicon": "/icon.svg",
