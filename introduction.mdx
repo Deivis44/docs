@@ -4,17 +4,18 @@ description: "Servidor multipropósito comunitario"
 mode: "wide"
 ---
 
-
-
-<img
-  className="block h-32 dark:hidden"
-  src="/path/banner-light.png"
-/>
-
-<img
-  className="hidden h-32 dark:block"
-  src="/images/banner-dark.png"
-/>
+<div className="flex justify-center">
+  <img
+    className="block dark:hidden"
+    src="/images/banner-light.png"
+    alt="Banner claro"
+  />
+  <img
+    className="hidden dark:block"
+    src="/images/banner-dark.png"
+    alt="Banner oscuro"
+  />
+</div>
 
 <Expandable title="¿Qué es?" defaultOpen="true">
   Un servidor casero basado en una Raspberry Pi 5 con 8 GB de RAM, configurado para actuar como gestor de:
