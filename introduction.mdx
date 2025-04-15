@@ -5,22 +5,24 @@ mode: "wide"
 ---
 
 <div className="flex justify-center">
-  <img
-    className="block dark:hidden"
-    src="/images/banner-light.png"
-    alt="Banner claro"
-  />
-  <img
-    className="hidden dark:block"
-    src="/images/banner-dark.png"
-    alt="Banner oscuro"
-  />
+<img
+  className="block dark:hidden"
+  src="/images/banner-light.png"
+  alt="Banner claro"
+/>
+
+<img
+  className="hidden dark:block"
+  src="/images/banner-dark.png"
+  alt="Banner oscuro"
+/>
+
 </div>
 
 <Expandable title="¿Qué es?" defaultOpen="true">
   Un servidor casero basado en una Raspberry Pi 5 con 8 GB de RAM, configurado para actuar como gestor de:
 
-  <CardGroup cols="1">
+  <CardGroup cols="3">
     <Card title="Juegos" icon="cube">
       Un **servidor de Minecraft** autoalojado.
     </Card>
@@ -31,15 +33,12 @@ mode: "wide"
       Un **espacio compartido accesible remotamente** con seguridad VPN (Tailscale).
     </Card>
   </CardGroup>
-  # 
 </Expandable>
 
 # Objetivos
 
 <Info>
-  Crear un entorno estable, accesible y económico para compartir, jugar y almacenar datos entre
-
-  varios dispositivos.
+  Crear un entorno estable, accesible y económico para compartir, jugar y almacenar datos entre varios dispositivos.
 </Info>
 
 <Tabs>
@@ -54,30 +53,28 @@ mode: "wide"
   </Tab>
 </Tabs>
 
-<CardGroup cols="2">
-  <Card title="Edit Your Docs" icon="pen-to-square" href="https://mintlify.com/docs/quickstart">
-    Get your docs set up locally for easy development
-  </Card>
-  <Card title="Preview Changes" icon="image" href="https://mintlify.com/docs/development">
-    Preview your changes before you push to make sure they're perfect
-  </Card>
-</CardGroup>
+## Preguntas Frecuentes
 
-## Make it yours
+<Expandable title="¿Puedo acceder al servidor desde mi celular?">
+  Sí. Gracias a Tailscale puedes conectarte desde cualquier dispositivo que tenga la app instalada, incluyendo Android y iOS. Solo debes iniciar sesión con tu cuenta y estar aprobado en la red privada.
+</Expandable>
 
-Update your docs to your brand and add valuable content for the best user conversion.
+<Expandable title="¿Qué pasa si se va la luz?">
+  Puedes automatizar el reinicio del servidor usando `crontab` o con la opción `restart: unless-stopped` en tu archivo `docker-compose.yml`.
+</Expandable>
 
-<CardGroup cols="2">
-  <Card title="Customize Style" icon="palette" href="https://mintlify.com/docs/settings/global">
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card title="Reference APIs" icon="code" href="https://mintlify.com/docs/api-playground/openapi">
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card title="Add Components" icon="screwdriver-wrench" href="https://mintlify.com/docs/content/components/accordions">
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card title="Get Inspiration" icon="stars" href="https://mintlify.com/customers">
-    Check out our showcase of our favorite documentation
-  </Card>
-</CardGroup>
+<Expandable title="¿Dónde se guardan los archivos?">
+  Todo se redirige a la partición `/mnt/datos`, ubicada en el disco externo, para no llenar la tarjeta SD del sistema.
+</Expandable>
+
+<Expandable title="¿Puedo entrar a Minecraft sin cuenta premium?">
+  Sí. En el archivo de configuración del servidor Docker puedes poner `ONLINE_MODE=false`, lo que permite jugadores sin cuenta oficial.
+</Expandable>
+
+<Expandable title="¿Se puede acceder a los archivos desde Nautilus?">
+  ¡Claro\! Abre Nautilus → Red → Conectar al servidor → escribe `sftp://rasputin@<tu-ip-tailscale>/mnt/david` y verás tus archivos como si fueran locales.
+</Expandable>
+
+<Expandable title="¿Cómo agrego más usuarios a mi red?">
+  Solo instala Tailscale en sus dispositivos y apruébalos desde tu [panel de administración](https://login.tailscale.com/admin/machines). Pueden conectarse con su propia IP dentro de tu tailnet.
+</Expandable>
