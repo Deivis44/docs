@@ -1,32 +1,27 @@
-# Mintlify Starter Kit
+# Server Rasputin
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+Documentación de un servidor casero sobre Raspberry Pi 5 de 8 GB. La [introducción](introduction.mdx) describe su propósito: alojar un servidor de Minecraft, compartir archivos y multimedia, y dar acceso remoto a través de una red privada con Tailscale.
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+## Contenido
 
-### Development
+| Ruta | Contenido |
+| --- | --- |
+| [`introduction.mdx`](introduction.mdx) | Resumen del servidor, objetivos y preguntas frecuentes |
+| [`docs.json`](docs.json) | Navegación, tema y configuración del sitio |
+| [`images/`](images) y [`logo/`](logo) | Recursos visuales |
+| [`essentials/`](essentials) y [`api-reference/`](api-reference) | Ejemplos de la plantilla de Mintlify |
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
+El sitio está en desarrollo. Las páginas de ejemplo de la plantilla describen Mintlify y una API de muestra.
 
+## Vista previa local
+
+Con una versión de Node.js compatible con el CLI de Mintlify, ejecuta desde el directorio que contiene `docs.json`:
+
+```bash
+npm install -g mint
+mint dev
 ```
-npm i -g mintlify
-```
 
-Run the following command at the root of your documentation (where docs.json is)
+La vista previa abre en [`localhost:3000`](http://localhost:3000). Para empezar a editar la documentación del servidor, abre `introduction.mdx`.
 
-```
-mintlify dev
-```
-
-### Publishing Changes
-
-Install our Github App to auto propagate changes from your repo to your deployment. Changes will be deployed to production automatically after pushing to the default branch. Find the link to install on your dashboard. 
-
-#### Troubleshooting
-
-- Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.
-- Page loads as a 404 - Make sure you are running in a folder with `docs.json`
+[Instalación de Mintlify y requisitos de Node.js](https://www.mintlify.com/docs/cli/install)
